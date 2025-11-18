@@ -12,7 +12,10 @@ def to_tategaki(str, title)
       body {
 /*      margin: 1rem;*/
         margin-left: 2em;
-        font-family: serif;
+		/*font-family: "ヒラギノ明朝 Std", serif;*/
+		font-family: "Yu Mincho", "游明朝", YuMincho, serif;
+		font-weight: 500;
+		line-height: 1.5;
       }
 
       article {
@@ -23,9 +26,9 @@ def to_tategaki(str, title)
         margin-top: 2rem;
         writing-mode: vertical-rl;
         columns: 20rem;
-/*        column-gap: 400px;*/
+        column-gap: 400px;
 
-        column-gap: 40px;
+/*        column-gap: 40px;*/
       }
 
       h4{
@@ -41,8 +44,8 @@ def to_tategaki(str, title)
       }
 
       div.description{
-        margin-top: 1em;
-        text-indent: 1em;
+        margin-top: 3em;
+        text-indent: 0em;
 
       }
       div.line {
@@ -50,7 +53,7 @@ def to_tategaki(str, title)
         text-indent: -1em;
       }
       div.comment {
-      	margin-top: 2em;
+      	margin-top: 3em;
       	color: red;
       }
 
@@ -95,7 +98,7 @@ EOS
 	  when /★(.*?)\n/
 	  	html_box << %Q|<h4>#{$1}</h4>|
 
-	  when /(■.*?)\n/
+	  when /(○.*?)\n/
 		  html_box << %Q|<section>|
 		  html_box << %Q|<div class="scene">#{$1}</div>|
 		  scene_flag = 1
