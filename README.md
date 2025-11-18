@@ -1,10 +1,18 @@
-# -scenario
+# -scenario (Personal Fork)
+Forked from [EnJoeToh/-scenario: シナリオ書き用](https://github.com/EnJoeToh/-scenario)
 
 - 脚本でインデントを入れるのに疲れた
 - 差分も取りたい
 - テキストデータで書いてから変換する
 - 結果はブラウザで見る
 - PDF化はブラウザにまかせる（うまくページに入るかは、column-gapを調節して頑張る）
+
+## Modifications from Original
+
+このフォークでは以下の変更を加えています：
+
+- **フォント変更**: Windows環境に最適化（游明朝）
+- **ト書きインデント**: 3文字分に変更（オリジナルは1文字）
 
 ## Demo
 
@@ -39,3 +47,5 @@ diff.html
 
 ## License
 modified BSD style license
+
+Original repository: [EnJoeToh/-scenario: シナリオ書き用](https://github.com/EnJoeToh/-scenario)
