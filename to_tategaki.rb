@@ -1,7 +1,12 @@
 #! ruby -EUTF-8
 
-def to_tategaki(str, title)
+def to_tategaki(str, title, mode = 1)
 	html_box = []
+	
+	# モードに応じた設定
+	column_gap = mode == 2 ? "40px" : "400px"
+	margin_top = mode == 2 ? "1rem" : "4rem"
+	
 	head = <<~EOS
 <!DOCTYPE html>
 <html lang=\"ja\">
@@ -9,28 +14,29 @@ def to_tategaki(str, title)
 	<meta charset=\"UTF-8\">
 	<title>#{title}</title>
 	<style>
-      body {
-/*      margin: 1rem;*/
-        margin-left: 2em;
-		/*font-family: "ヒラギノ明朝 Std", serif;*/
-		font-family: "Yu Mincho", "游明朝", YuMincho, serif;
-		font-weight: 500;
-		line-height: 1.5;
-      }
+body {
+    margin-left: 2em;
+    font-family: "Yu Mincho", "游明朝", YuMincho, serif;
+    font-weight: 500;
+    line-height: 1.5;
+    font-feature-settings: "palt" 0;
+}
 
-      article {
-        width: 60em;
-        max-width: 60em;
-        height: 20rem;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-        writing-mode: vertical-rl;
-        columns: 20rem;
-        column-gap: 400px;
-
-/*        column-gap: 40px;*/
-      }
-
+article {
+    width: 60em;
+    max-width: 60em;
+    height: 20rem;
+    margin-top: #{margin_top};
+    writing-mode: vertical-rl;
+    letter-spacing: 0em;
+    columns: 20rem;
+    column-gap: #{column_gap};
+    /* 文字間隔を完全に固定 */
+    font-feature-settings: "palt" 0, "pkna" 0;
+    text-spacing: none;
+    /* 約物の自動調整を無効化 */
+    text-autospace: no-autospace;
+}
       h4{
       	margin-top: 1em;
       }

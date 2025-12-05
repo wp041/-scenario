@@ -11,8 +11,10 @@ Forked from [EnJoeToh/-scenario: シナリオ書き用](https://github.com/EnJoe
 
 このフォークでは以下の変更を加えています：
 
-- **フォント変更**: Windows環境に最適化（游明朝）
-- **ト書きインデント**: 3文字分に変更（オリジナルは1文字）
+- フォント変更: Windows環境に最適化（游明朝）
+- ト書きインデント: 3文字分に変更（オリジナルは1文字）
+- ライブリロード機能の追加: localhostする
+- 印刷フォーマット、ディスプレイフォーマットの簡単切り替え
 
 ## Demo
 
@@ -40,6 +42,16 @@ diff.html
 整形する
 
 ```ruby genetrate.rb new.txt > new.html```
+
+```ruby genetrate.rb new.txt > new.html 2```
+と末尾に2をつけることで一枚に2行入ってディスプレイで見やすい
+
+ライブビューイング
+
+```ruby live_server.rb new.txt```
+
+```ruby live_server.rb new.txt 2```
+と末尾に2をつけることで一枚に2行入ってディスプレイで見やすい
 
 差分をとる
 

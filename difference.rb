@@ -17,18 +17,21 @@ head = <<~EOS
       body {
 /*      margin: 1rem;*/
         margin-left: 2em;
-        font-family: serif;
+		/*font-family: "ヒラギノ明朝 Std", serif;*/
+		font-family: "Yu Mincho", "游明朝", YuMincho, serif;
+		font-weight: 500;
+		line-height: 1.5;
       }
 
       article {
         width: 60em;
         max-width: 60em;
         height: 20rem;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
+        margin-top: 0rem;
         writing-mode: vertical-rl;
+		letter-spacing: 0em;
         columns: 20rem;
-/*        column-gap: 400px;*/
+ /*        column-gap: 400px;*/
 
         column-gap: 40px;
       }
@@ -46,8 +49,8 @@ head = <<~EOS
       }
 
       div.description{
-        margin-top: 1em;
-        text-indent: 1em;
+        margin-top: 3em;
+        text-indent: 0em;
 
       }
       div.line {
@@ -55,7 +58,7 @@ head = <<~EOS
         text-indent: -1em;
       }
       div.comment {
-      	margin-top: 2em;
+      	margin-top: 3em;
       	color: red;
       }
 
